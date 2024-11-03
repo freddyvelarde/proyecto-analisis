@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyecto análisis y diseño de sistemas</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link
@@ -13,160 +13,249 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+      }
       .sidebar {
-        background-color: #2c3e50;
-        min-height: 100vh;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 3.5rem;
+        background-color: #343a40;
+        transition: all 0.3s;
       }
-      .sidebar h4 {
-        color: #ecf0f1;
+      .main-content {
+        margin-left: 250px;
+        padding: 2rem;
+        transition: all 0.3s;
       }
-      .sidebar a {
-        color: #ecf0f1;
-        transition: background-color 0.3s;
+      @media (max-width: 768px) {
+        .sidebar {
+          margin-left: -250px;
+        }
+        .main-content {
+          margin-left: 0;
+        }
+        .sidebar.active {
+          margin-left: 0;
+        }
+        .main-content.active {
+          margin-left: 250px;
+        }
       }
-      .sidebar a:hover,
-      .sidebar a.active {
-        background-color: #34495e !important;
+      .toggle-sidebar-btn {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
       }
       .umsa-logo {
         max-width: 200px;
-        border-radius: 50%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-      }
-      .info-section {
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      /* Updated styles for sidebar and hamburger */
-      @media (max-width: 767.98px) {
-        .sidebar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          z-index: 1000;
-          height: auto;
-          min-height: auto;
-        }
-        .sidebar.show {
-          min-height: 100vh;
-        }
-        main {
-          margin-top: 60px;
-        }
-      }
-      .hamburger-btn {
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        z-index: 1030;
-        padding: 8px 12px;
-        border-radius: 4px;
+        height: auto;
       }
     </style>
   </head>
-  <body class="bg-light text-dark">
+  <body>
+    <button class="btn btn-dark toggle-sidebar-btn" onclick="toggleSidebar()">
+      ☰
+    </button>
+
     <div class="container-fluid">
       <div class="row">
-        <!-- Updated Hamburger Button -->
-        <button
-          class="btn btn-dark d-md-none hamburger-btn"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#sidebarMenu"
-          aria-controls="sidebarMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+        <!-- Sidebar -->
+        <nav
+          class="col-md-3 col-lg-2 d-md-block sidebar collapse bg-dark"
+          id="sidebarMenu"
         >
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Updated Sidebar -->
-        <div class="col-md-3 col-lg-2 px-0">
-          <nav class="collapse d-md-block sidebar bg-dark p-4" id="sidebarMenu">
-            <h4 class="text-center mb-4">Documentación</h4>
-            <nav class="nav flex-column">
-              <a
-                href="./index.html"
-                class="nav-link active d-flex align-items-center"
-              >
-                <i class="fas fa-home me-2"></i>Inicio
-              </a>
-              <a
-                href="./pages/analisis-estructurado.html"
-                class="nav-link d-flex align-items-center"
-              >
-                <i class="fas fa-sitemap me-2"></i>Análisis Estructurado
-              </a>
-              <a
-                href="./pages/orientado-objetos.html"
-                class="nav-link d-flex align-items-center"
-              >
-                <i class="fas fa-cube me-2"></i>Orientado a objetos
-              </a>
-              <a
-                href="./pages/MT.html"
-                class="nav-link d-flex align-items-center"
-              >
-                <i class="fas fa-chart-line me-2"></i>MT
-              </a>
-              <a
-                href="./pages/video.html"
-                class="nav-link d-flex align-items-center"
-              >
-                <i class="fas fa-video me-2"></i>Video
-              </a>
-            </nav>
-          </nav>
-        </div>
+          <div class="position-sticky">
+            <h4 class="text-light text-center my-4">Documentación</h4>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active text-light" href="./index.html">
+                  <i class="fas fa-home me-2"></i>Inicio
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-light"
+                  href="./pages/analisis-estructurado.html"
+                >
+                  <i class="fas fa-sitemap me-2"></i>Análisis Estructurado
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-light"
+                  href="./pages/orientado-objetos.html"
+                >
+                  <i class="fas fa-cube me-2"></i>Orientado a objetos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./pages/MT.html">
+                  <i class="fas fa-chart-line me-2"></i>MT
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./pages/video.html">
+                  <i class="fas fa-video me-2"></i>Video
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
         <!-- Main Content -->
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
-          <!-- Breadcrumb -->
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-light p-3 rounded">
-              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Documentación
-              </li>
-            </ol>
-          </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+          <div class="container">
+            <nav aria-label="breadcrumb" class="mt-3">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Documentación
+                </li>
+              </ol>
+            </nav>
 
-          <!-- Content Header -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Proyecto de análisis y diseño de sistemas</h2>
-          </div>
-
-          <!-- Content Section -->
-          <div class="text-center">
-            <img
-              src="./assets/umsa-logo.jpg"
-              alt="UMSA logo"
-              class="umsa-logo my-4"
-            />
-
-            <div class="info-section mb-4">
-              <h4><strong>Docente:</strong> M.Sc. MIGUEL COTAÑA MIER</h4>
-              <h4><strong>Materia:</strong> Análisis y diseño de sistemas I</h4>
+            <div class="text-center mb-5">
+              <h1 class="display-4 mb-3">
+                Análisis y diseño de sistemas de Gestión de Inventarios
+              </h1>
+              <img
+                src="./assets/umsa-logo.jpg"
+                class="umsa-logo mb-4"
+                alt="umsa-logo"
+              />
+              <h4 class="text-muted">
+                <strong>Docente:</strong> M.Sc. MIGUEL COTAÑA MIER
+              </h4>
+              <h5 class="text-muted">
+                <strong>Materia:</strong> Análisis y diseño de sistemas I
+              </h5>
             </div>
 
-            <div class="info-section">
-              <h4><strong>Integrantes:</strong></h4>
-              <ul class="list-unstyled">
-                <li>Ariana</li>
-                <li>Freddy Erick</li>
-                <li>Cristian</li>
-                <li>Esvenka</li>
+            <div class="card mb-5">
+              <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Integrantes</h4>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Ariana</li>
+                <li class="list-group-item">Freddy Erick</li>
+                <li class="list-group-item">Cristian</li>
+                <li class="list-group-item">Esvenka</li>
               </ul>
+            </div>
+
+            <div class="card mb-5">
+              <div class="card-header bg-secondary text-white">
+                <h2 class="mb-0">Descripción</h2>
+              </div>
+              <div class="card-body">
+                <p class="card-text">
+                  El sistema de gestión de inventarios es fundamental para el
+                  control y seguimiento de los productos en almacenes, fábricas
+                  y comercios. En la era digital, la informatización de los
+                  inventarios permite una mayor eficiencia, precisión y
+                  reducción de costos. Este informe explora la implementación y
+                  los beneficios de un sistema de gestión de inventarios,
+                  identificando los desafíos actuales y proponiendo un modelo
+                  que optimice el control de stock, reduzca pérdidas y permita
+                  una mejor toma de decisiones.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header bg-secondary text-white">
+                <h2 class="mb-0">Objetivos</h2>
+              </div>
+              <div class="card-body">
+                <h4>Objetivos generales</h4>
+                <p>
+                  Desarrollar un sistema de gestión de inventarios que permita
+                  optimizar el control de stock y reducir costos operativos.
+                </p>
+                <ul>
+                  <li>
+                    Este objetivo se centra en la creación de un sistema
+                    integral que no solo mejore la gestión de inventarios, sino
+                    que también ayude a la empresa a disminuir costos
+                    relacionados con el manejo de stock, como almacenamiento,
+                    faltantes o excesos.
+                  </li>
+                </ul>
+
+                <h4 class="mt-4">Objetivos específicos</h4>
+                <ol>
+                  <li>
+                    <p>
+                      Analizar las limitaciones de los métodos actuales de
+                      gestión de inventarios.
+                    </p>
+                    <ul>
+                      <li>
+                        Se busca evaluar las estrategias existentes en las
+                        empresas para identificar ineficiencias y áreas de
+                        mejora. Esto puede incluir el análisis de métodos como
+                        Just-In-Time (JIT) y otras prácticas que podrían no
+                        estar optimizadas.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>
+                      Identificar los requisitos técnicos y funcionales para un
+                      sistema de gestión eficiente.
+                    </p>
+                    <ul>
+                      <li>
+                        Este objetivo implica recoger y definir las necesidades
+                        de los usuarios y los procesos específicos que el nuevo
+                        sistema debe abordar. Se considerarán aspectos como la
+                        usabilidad, la integración con otros sistemas y las
+                        capacidades necesarias para un seguimiento efectivo del
+                        stock.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>
+                      Proponer un diseño de sistema de gestión de inventarios
+                      que integre funcionalidades de control y visibilidad de
+                      stock en tiempo real.
+                    </p>
+                    <p>
+                      Aquí se desarrollará un modelo del sistema que contemple
+                      características como:
+                    </p>
+                    <ul>
+                      <li>Monitoreo en tiempo real del inventario.</li>
+                      <li>
+                        Generación de reportes automáticos sobre el estado del
+                        stock.
+                      </li>
+                      <li>
+                        Interfaz amigable para facilitar el uso por parte de los
+                        empleados.
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
         </main>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function toggleSidebar() {
+        document.getElementById("sidebarMenu").classList.toggle("active");
+        document.querySelector(".main-content").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>

@@ -15,9 +15,13 @@
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
-
     <div class="container-fluid">
-    <button class="btn toggle-sidebar-btn" onclick="scrollToTop();toggleSidebar()">☰</button>
+      <button
+        class="btn toggle-sidebar-btn"
+        onclick="scrollToTop();toggleSidebar()"
+      >
+        ☰
+      </button>
       <div class="row">
         <!-- Sidebar -->
         <nav
@@ -59,61 +63,157 @@
           </nav>
         </nav>
 
-
-
         <!-- Main Content -->
-        <div class="col-md-9 col-lg-10 p-4 main-content">
-          <header class="mb-4">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  Documentación
-                </li>
-              </ol>
-            </nav>
-          </header>
+        <div class="">
+          <!-- <header class="mb-4"> -->
+          <!--   <nav aria-label="breadcrumb"> -->
+          <!--     <ol class="breadcrumb"> -->
+          <!--       <li class="breadcrumb-item"><a href="#">Inicio</a></li> -->
+          <!--       <li class="breadcrumb-item active" aria-current="page"> -->
+          <!--         Documentación -->
+          <!--       </li> -->
+          <!--     </ol> -->
+          <!--   </nav> -->
+          <!-- </header> -->
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container">
+              <nav aria-label="breadcrumb" class="mt-3">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Documentación
+                  </li>
+                </ol>
+              </nav>
 
-          <!-- Centered Content -->
-          <div class="d-flex flex-column align-items-center">
-            <center>
-              <!-- <strong><h1>UMSA</h1></strong> -->
-              <!-- <h2>Proyecto de  de sistemas</h2> -->
-              <h2>Análisis y diseño de sistemas de Gestión de Inventarios</h2>
-            </center>
-            <hr />
-            <div class="d-flex justify-content-center">
-              <img
-                src="./assets/umsa-logo.jpg"
-                class="umsa-logo"
-                alt="umsa-logo"
-                width="400"
-                class="img-fluid"
-              />
+              <div class="text-center mb-5">
+                <h1 class="display-4 mb-3">
+                  Análisis y diseño de sistemas de Gestión de Inventarios
+                </h1>
+                <img
+                  src="./assets/umsa-logo.jpg"
+                  class="umsa-logo mb-4"
+                  alt="umsa-logo"
+                />
+                <h4 class="text-muted">
+                  <strong>Docente:</strong> M.Sc. MIGUEL COTAÑA MIER
+                </h4>
+                <h5 class="text-muted">
+                  <strong>Materia:</strong> Análisis y diseño de sistemas I
+                </h5>
+              </div>
+
+              <div class="card mb-5">
+                <div class="card-header bg-secondary text-white">
+                  <h4 class="mb-0">Integrantes</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Hidalgo Colque Ariana Daniela</li>
+                  <li class="list-group-item">Jiménez Quenta Kelly Esvenka</li>
+                  <li class="list-group-item">Velarde Silva Freddy Erick</li>
+                  <li class="list-group-item">Cristian</li>
+                </ul>
+              </div>
+
+              <div class="card mb-5">
+                <div class="card-header">
+                  <h2 class="mb-0"><strong>Descripción</strong></h2>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    El sistema de gestión de inventarios es fundamental para el
+                    control y seguimiento de los productos en almacenes,
+                    fábricas y comercios. En la era digital, la informatización
+                    de los inventarios permite una mayor eficiencia, precisión y
+                    reducción de costos. Este informe explora la implementación
+                    y los beneficios de un sistema de gestión de inventarios,
+                    identificando los desafíos actuales y proponiendo un modelo
+                    que optimice el control de stock, reduzca pérdidas y permita
+                    una mejor toma de decisiones.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="mb-0"><strong>Objetivos</strong></h2>
+                </div>
+                <div class="card-body">
+                  <h4 class=""><strong>Objetivos generales</strong></h4>
+                  <p>
+                    Desarrollar un sistema de gestión de inventarios que permita
+                    optimizar el control de stock y reducir costos operativos.
+                  </p>
+                  <ul>
+                    <li>
+                      Este objetivo se centra en la creación de un sistema
+                      integral que no solo mejore la gestión de inventarios,
+                      sino que también ayude a la empresa a disminuir costos
+                      relacionados con el manejo de stock, como almacenamiento,
+                      faltantes o excesos.
+                    </li>
+                  </ul>
+
+                  <h4 class="mt-4"><strong>Objetivos específicos</strong></h4>
+                  <ol>
+                    <li>
+                      <p>
+                        Analizar las limitaciones de los métodos actuales de
+                        gestión de inventarios.
+                      </p>
+                      <ul>
+                        <li>
+                          Se busca evaluar las estrategias existentes en las
+                          empresas para identificar ineficiencias y áreas de
+                          mejora. Esto puede incluir el análisis de métodos como
+                          Just-In-Time (JIT) y otras prácticas que podrían no
+                          estar optimizadas.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p>
+                        Identificar los requisitos técnicos y funcionales para
+                        un sistema de gestión eficiente.
+                      </p>
+                      <ul>
+                        <li>
+                          Este objetivo implica recoger y definir las
+                          necesidades de los usuarios y los procesos específicos
+                          que el nuevo sistema debe abordar. Se considerarán
+                          aspectos como la usabilidad, la integración con otros
+                          sistemas y las capacidades necesarias para un
+                          seguimiento efectivo del stock.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p>
+                        Proponer un diseño de sistema de gestión de inventarios
+                        que integre funcionalidades de control y visibilidad de
+                        stock en tiempo real.
+                      </p>
+                      <p>
+                        Aquí se desarrollará un modelo del sistema que contemple
+                        características como:
+                      </p>
+                      <ul>
+                        <li>Monitoreo en tiempo real del inventario.</li>
+                        <li>
+                          Generación de reportes automáticos sobre el estado del
+                          stock.
+                        </li>
+                        <li>
+                          Interfaz amigable para facilitar el uso por parte de
+                          los empleados.
+                        </li>
+                      </ul>
+                    </li>
+                  </ol>
+                </div>
+              </div>
             </div>
-
-            <hr />
-
-            <div>
-              <h4 class="text-center"><strong>Docente:</strong> M.Sc. MIGUEL COTAÑA MIER</h4>
-            </div>
-            <div>
-              <h4 class="text-center"><strong>Materia:</strong> Análisis y diseño de sistemas I</h4>
-            </div>
-
-          <div class="">
-            <div>
-                <h4 class="text-center"><strong>Integrantes:</strong></h4>
-              <ul>
-                  <li class="integrantes-list">Ariana</li>
-                <li class="integrantes-list">Freddy Erick</li>
-                <li class="integrantes-list">Cristian</li>
-                <li class="integrantes-list">Esvenka</li>
-              </ul>
-            </div>
-          </div>
-
-
+          </main>
         </div>
       </div>
     </div>
