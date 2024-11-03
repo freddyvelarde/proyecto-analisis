@@ -35,6 +35,16 @@
     left: 10px;
     z-index: 1050;
   }
+  .responsive-title {
+    padding-top: 20px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2000;
+    width: 90%;
+  }
   .responsive-menu {
     padding-top: 20px;
     background: white;
