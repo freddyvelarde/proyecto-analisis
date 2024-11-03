@@ -1,0 +1,49 @@
+.sidebar {
+  min-height: 100vh;
+  border-right: 1px solid #dee2e6;
+}
+.nav-link {
+  color: #333;
+}
+.nav-link:hover {
+  background-color: #f8f9fa;
+}
+
+.integrantes-list {
+  font-size: 17px;
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-top: 40px;
+    padding-top: 60px;
+  }
+}
+.toggle-sidebar-btn {
+  background: #e3dada;
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .toggle-sidebar-btn {
+    background: #e3dada;
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1050;
+  }
+  .responsive-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2000;
+    width: 90%;
+  }
+  .umsa-logo {
+    width: 300px;
+  }
+}
