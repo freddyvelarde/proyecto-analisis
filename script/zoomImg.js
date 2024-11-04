@@ -1,21 +1,42 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//   const image = document.querySelectorAll(".diagrama-contexto-img");
+//
+//   image.addEventListener("click", function () {
+//     if (window.innerWidth < 768) {
+//       const overlay = document.createElement("div");
+//       overlay.classList.add("zoom-overlay");
+//
+//       const zoomedImage = document.createElement("img");
+//       zoomedImage.src = image.src;
+//       overlay.appendChild(zoomedImage);
+//
+//       overlay.addEventListener("click", function () {
+//         document.body.removeChild(overlay);
+//       });
+//
+//       document.body.appendChild(overlay);
+//     }
+//   });
+// });
 document.addEventListener("DOMContentLoaded", function () {
-  const image = document.querySelector(".diagrama-contexto-img");
+  const images = document.querySelectorAll(".diagrama-contexto-img");
 
-  image.addEventListener("click", function () {
-    if (window.innerWidth < 768) {
-      // Only trigger on mobile view
-      const overlay = document.createElement("div");
-      overlay.classList.add("zoom-overlay");
+  images.forEach(function (image) {
+    image.addEventListener("click", function () {
+      if (window.innerWidth < 768) {
+        const overlay = document.createElement("div");
+        overlay.classList.add("zoom-overlay");
 
-      const zoomedImage = document.createElement("img");
-      zoomedImage.src = image.src;
-      overlay.appendChild(zoomedImage);
+        const zoomedImage = document.createElement("img");
+        zoomedImage.src = image.src;
+        overlay.appendChild(zoomedImage);
 
-      overlay.addEventListener("click", function () {
-        document.body.removeChild(overlay); // Close overlay on click
-      });
+        overlay.addEventListener("click", function () {
+          document.body.removeChild(overlay);
+        });
 
-      document.body.appendChild(overlay);
-    }
+        document.body.appendChild(overlay);
+      }
+    });
   });
 });
